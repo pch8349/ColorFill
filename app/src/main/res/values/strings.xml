@@ -4,6 +4,7 @@
     <string name="back_btn">뒤로가기</string>
     <string name="main_filter_setting">컬러 필터 설정</string>
     <string name="main_image_extraction">이미지 선택</string>
+    <string name="main_image_">이미지 색상 인식</string>
     <string name="main_filter_test">색맹 테스트</string>
     <string name="lenses_type0">적색 필터</string>
     <string name="lenses_type1">녹색 필터</string>

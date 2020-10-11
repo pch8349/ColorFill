@@ -65,10 +65,10 @@
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:layout_gravity="center"
-                    android:gravity="center"
                     android:text="@string/lenses_type0"
                     android:textColor="@color/colorBlack"
-                    android:textSize="20sp" />
+                    android:textSize="20sp"
+                    android:gravity="center"/>
             </LinearLayout>
 
             <LinearLayout
