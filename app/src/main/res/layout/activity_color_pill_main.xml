@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/colorWhite">
+
+  <ImageView
+      android:layout_width="250dp"
+      android:layout_height="250dp"
+      android:layout_gravity="center"
+      android:src="@drawable/logo3"
+      android:layout_marginTop="80dp"/>
+
+  <LinearLayout
+      android:id="@+id/ll_tab0"
+      android:layout_gravity="center_horizontal"
+      android:layout_marginTop="70dp"
+      android:layout_width="350dp"
+      android:layout_height="70dp"
+      android:orientation="vertical"
+      android:background="@drawable/rounding">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:text="@string/main_filter_setting"
+        android:textColor="@color/colorWhite"
+        android:gravity="center"
+        android:textStyle="bold"
+        android:textSize="30sp"/>
+  </LinearLayout>
+
+  <LinearLayout
+      android:id="@+id/ll_tab1"
+      android:layout_gravity="center_horizontal"
+      android:layout_marginTop="30dp"
+      android:layout_width="350dp"
+      android:layout_height="70dp"
+      android:orientation="vertical"
+      android:background="@drawable/rounding">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:text="@string/main_image_extraction"
+        android:textColor="@color/colorWhite"
+        android:gravity="center"
+        android:textStyle="bold"
+        android:textSize="30sp"/>
+  </LinearLayout>
+
+  <LinearLayout
+      android:id="@+id/ll_tab2"
+      android:layout_gravity="center_horizontal"
+      android:layout_marginTop="30dp"
+      android:layout_width="350dp"
+      android:layout_height="70dp"
+      android:orientation="vertical"
+      android:background="@drawable/rounding">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:text="@string/main_filter_test"
+        android:textColor="@color/colorWhite"
+        android:gravity="center"
+        android:textStyle="bold"
+        android:textSize="30sp"/>
+  </LinearLayout>
+
+
+</LinearLayout>

@@ -1,0 +1,28 @@
+<resources>
+    <string name="app_name">ColorFill</string>
+
+    <string name="back_btn">뒤로가기</string>
+    <string name="main_filter_setting">컬러 필터 설정</string>
+    <string name="main_image_extraction">이미지 선택</string>
+    <string name="main_filter_test">색맹 테스트</string>
+    <string name="lenses_type0">적색 필터</string>
+    <string name="lenses_type1">녹색 필터</string>
+    <string name="lenses_type2">청색 필터</string>
+    <string name="lenses_type3">흑백 필터</string>
+    <string name="filter_type0">적각색 이상\n(적록색맹)</string>
+    <string name="filter_type1">녹각색 이상\n(녹적색맹)</string>
+    <string name="filter_type2">적각색 이상\n(적록색맹)</string>
+    <string name="filter_type3">흑백필터</string>
+    <string name="scrollbar">세기조절</string>
+    <string name="reset">초기화</string>
+    <string name="apply">적용</string>
+
+    <string name="rgb_info">RGB 정보</string>
+    <string name="rgb_info_r">R: </string>
+    <string name="rgb_info_g">G: </string>
+    <string name="rgb_info_b">B: </string>
+    <string name="rgb_info_total">#</string>
+    <string name="select_colr">선택된 색상은</string>
+    <string name="select_colr_">입니다.</string>
+
+</resources>
