@@ -74,12 +74,12 @@ public class FilterSettingActivity extends Activity {
 
         if(v.getId()==R.id.ll_filter0){
             ResetUI();
-            R1 = 233; G1 = 244; B1 = 231;
+            R1 = 255; G1 = 10; B1 = 10;
             ll_filter0.setBackground(getDrawable(R.drawable.outline_textview_black_background));
             tv_filter0.setTextColor(getColor(R.color.colorWhite));
         }else if(v.getId()==R.id.ll_filter1){
             ResetUI();
-            R1 = 1; G1 = 1;B1 = 1;
+            R1 = 1; G1 = 255;B1 = 1;
             ll_filter1.setBackground(getDrawable(R.drawable.outline_textview_black_background));
             tv_filter1.setTextColor(getColor(R.color.colorWhite));
         }else if(v.getId()==R.id.ll_filter2){

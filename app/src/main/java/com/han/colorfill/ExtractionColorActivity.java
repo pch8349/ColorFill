@@ -111,7 +111,7 @@ public class ExtractionColorActivity extends Activity {
             ResetUI();
             ll_filter0.setBackground(getDrawable(R.drawable.outline_textview_black_background));
             tv_filter0.setTextColor(getColor(R.color.colorWhite));
-            iv_image.setImageBitmap(Transform(0.85f,0.5f,0.1f));  //TODO:  필터 변환
+            iv_image.setImageBitmap(REDTransform());  //TODO:  필터 변환
         }else if(v.getId()==R.id.ll_filter1){
             ResetUI();
             ll_filter1.setBackground(getDrawable(R.drawable.outline_textview_black_background));
@@ -130,6 +130,49 @@ public class ExtractionColorActivity extends Activity {
         }
     }
 
+    public Bitmap REDTransform(){
+
+        //Bitmap bitmap = ((BitmapDrawable)iv_image.getDrawable()).getBitmap();
+        Bitmap bitmap = ReferenceBitmap;
+
+        Bitmap bit = Bitmap.createBitmap(bitmap.getWidth(), bitmap.getHeight(), Bitmap.Config.ARGB_8888);
+
+        for (int i = 0; i < bitmap.getHeight(); i++) { // TODO: 적록색약 필터. YELLOW 값이 이상하게 변환되는 문제 발생. 대략 R>G,B && 7/8R < G && B < 1/5G 정도로 조건 줘보자
+            for (int j = 0; j < bitmap.getWidth(); j++) {
+//                int bWhite = bitmap.getPixel(j, i) & 0x000000;
+                int bValue = bitmap.getPixel(j, i) & 0x000000FF;
+                int gValue = (bitmap.getPixel(j, i) & 0x0000FF00) >> 8;
+                int rValue = (bitmap.getPixel(j, i) & 0x00FF0000) >> 16;
+                int t;
+                if (gValue>rValue && gValue>bValue && rValue>bValue) {
+                    t = rValue;
+                    rValue = (int) ((float) bValue);
+                    bValue = (int) ((float) t);
+                    gValue = (int) ((float) gValue);
+                }
+                if (rValue>gValue && rValue>bValue && 2*rValue/3<gValue && bValue*3<gValue){
+                    rValue = (int) ((float) rValue);
+                    bValue = (int) ((float) bValue);
+                    gValue = (int) ((float) gValue);
+                }
+                else if (rValue>gValue && rValue>bValue && gValue>bValue) {
+                    t = bValue;
+                    rValue = (int) ((float) rValue);
+                    bValue = (int) ((float) gValue);
+                    gValue = (int) ((float) t);
+                }
+                else {
+                    rValue = (int) ((float) rValue);
+                    bValue = (int) ((float) bValue);
+                    gValue = (int) ((float) gValue);
+                }
+                int color = Color.rgb(rValue,gValue,bValue);
+                bit.setPixel(j,i,color);
+            }
+        }
+        return bit;
+    }
+
     public Bitmap Transform(float R1, float G1, float B1){
 
         //Bitmap bitmap = ((BitmapDrawable)iv_image.getDrawable()).getBitmap();
@@ -139,7 +182,7 @@ public class ExtractionColorActivity extends Activity {
 
         for (int i = 0; i < bitmap.getHeight(); i++) {
             for (int j = 0; j < bitmap.getWidth(); j++) {
-                int bWhite = bitmap.getPixel(j, i) & 0x000000;
+//                int bWhite = bitmap.getPixel(j, i) & 0x000000;
                 int bValue = bitmap.getPixel(j, i) & 0x000000FF;
                 int gValue = (bitmap.getPixel(j, i) & 0x0000FF00) >> 8;
                 int rValue = (bitmap.getPixel(j, i) & 0x00FF0000) >> 16;
