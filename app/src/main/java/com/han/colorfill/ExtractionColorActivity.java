@@ -144,13 +144,19 @@ public class ExtractionColorActivity extends Activity {
                 int gValue = (bitmap.getPixel(j, i) & 0x0000FF00) >> 8;
                 int rValue = (bitmap.getPixel(j, i) & 0x00FF0000) >> 16;
                 int t;
-                if (gValue>rValue && gValue>bValue && rValue>bValue) {
+                if (gValue>200 && rValue>200 && bValue<rValue * 0.7) {
+                    t = rValue;
+                    rValue = (int) ((float) rValue);
+                    bValue = (int) ((float) bValue);
+                    gValue = (int) ((float) gValue);
+                }
+                else if (gValue>rValue && gValue>bValue && rValue>bValue) {
                     t = rValue;
                     rValue = (int) ((float) bValue);
                     bValue = (int) ((float) t);
                     gValue = (int) ((float) gValue);
                 }
-                if (rValue>gValue && rValue>bValue && 2*rValue/3<gValue && bValue*3<gValue){
+                else if (rValue>gValue && rValue>bValue && 2*rValue/3<gValue && bValue*2<gValue){
                     rValue = (int) ((float) rValue);
                     bValue = (int) ((float) bValue);
                     gValue = (int) ((float) gValue);
