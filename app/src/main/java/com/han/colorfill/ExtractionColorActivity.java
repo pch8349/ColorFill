@@ -103,7 +103,7 @@ public class ExtractionColorActivity extends Activity {
         }
 
     }
-
+ 
 
     @OnClick({R.id.ll_filter0,R.id.ll_filter1,R.id.ll_filter2,R.id.ll_filter3}) void Filter(View v){
 
