@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">ColorFill</string>
+    <string name="app_name">ColorFill</string> 
 
     <string name="back_btn">뒤로가기</string>
     <string name="main_filter_setting">컬러 필터 설정</string>
